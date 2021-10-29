@@ -39,8 +39,22 @@ resource "aws_security_group" "pch_websg" {
             security_groups  = null
             prefix_list_ids  = null
             self             = null
-        }
+        },
+
+      {
+            description     = "mysql"
+            from_port       = 3306
+            to_port         = 3306
+            protocol        = "tcp"
+            cidr_blocks      = ["0.0.0.0/0"]
+            ipv6_cidr_blocks  = ["::/0"]
+            security_groups  =  null
+            prefix_list_ids  =  null
+            self             =  null
+    }
+
     ]
+       
           
           egress = [
           {
